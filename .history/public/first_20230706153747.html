@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>人機介面示例</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calibration.css">
+</head>
+
+<body>
+    <div id="loginInfo"></div>
+    <div class="container">
+        <div class="centered">
+            <button id="leukemiaBtn" class="custom-button">Leukemia</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="centered">
+            <button id="tp53Btn" class="custom-button">TP53</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="centered">
+            <a href="MPN.html"><button id="mpnBtn" class="custom-button">MPN</button></a>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <!-- PCR開蓋 -->
+        <button id="pcrUnloadBtn" class="custom-button right-bottom-button">PCR unload</button>
+        <!-- 歷史訊息 -->
+        <a href="history.html"> <button id="historyBtn" class="custom-button right-bottom-button">
+                history</button></a>
+        <!-- 校正規零 -->
+        <button id="calibrationBtn" class="custom-button right-bottom-button"
+            onclick="startCountdown()">Calibration</button>
+        <!-- setting -->
+        <button id="settingsBtn" class="settings-icon"><i class="fa fa-cog"></i></button>
+    </div>
+
+    <div class="log-container right-top">
+        <button id="loginBtn" class="log-container">Login</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="login.js"></script>
+    <script src="calibration.js"></script>
+    <script src="PCR_open.js"></script>
+</body>
+
+</html>
