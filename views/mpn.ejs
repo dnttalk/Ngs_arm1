@@ -9,25 +9,49 @@
 </head>
 
 <body>
-    <div class="log-container right-top">
-        <button id="loginBtn" class="log-container">
-            <%= %>
-        </button>
-    </div>
-    <table border="1" align="center" width="800" height="200" cellspacing="0">
-
-        <% for (let i=0; i < 10; i++) { %>
+    <h1>Sample number (1-24)</h1>
+    <input type="number" max="24" min="1" value=""
+        oninput="if(value>24)value=24;if(value.length>3)value=value.slice(0,2);if(value<1)value=1">
+    <table border="1" align="center" width="800" height="200" cellspacing="0" id="sampleTable">
+        <% for (let i=0; i < 8; i++) { %>
             <tr>
                 <% if (i===0) { %>
-                    <td rowspan="10">合并单元格</td>
+                    <td rowspan="10">
+                        <div>
+                            <input type="checkbox" id="PCR Mix1" name="PCR Mix1" checked>
+                            <label for="scales">PCR Mix1
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="PCR Mix2" name="PCR Mix2">
+                            <label for="PCR Mix2">PCR Mix2</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="Magnetic beads" name="Magnetic beads">
+                            <label for="Magnetic beads">Magnetic beads</label>
+                        </div>
+                    </td>
                     <% } %>
-                        <% for (let j=0; j < 6; j++) { %>
-                            <td>行 <%= i + 1 %>, 列 <%= j + 1 %>
+                        <% for (let j=0; j < 3; j++) { %>
+                            <td>
+                                <input type="text" id="Sample name" name="Sample name" value="Sample name">行 <%= i + 1
+                                    %>, 列 <%= j + 1 %>
                             </td>
                             <% } %>
+                                <% for (let j=0; j < 3; j++) { %>
+                                    <td>
+                                        <input type="text" id="Index name" name="Index name" value="Index name">行 <%= i
+                                            + 1 %>, 列 <%= j + 1 %>
+                                    </td>
+                                    <% } %>
             </tr>
             <% } %>
     </table>
+    <a href="first.html"><button class="green-arrow-button"><span class="arrow-left"></span></button></a>
+    <button class="green-arrow-button"><span class="arrow-right"></span></button>
+    <script src="/javascripts/mpn.js"></script>
+
 </body>
 
 </html>
