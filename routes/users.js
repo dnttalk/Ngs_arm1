@@ -16,7 +16,7 @@ router.post('/login', function (req, res) {
             //遍歷數據 找出匹配的對象 返回用戶登錄成功
             for (let obj of arr) {
                 if (obj.user == user && obj.pwd == pwd) {
-                    res.render('login_success', { user, title: 'Login success' });
+                    res.render('first', { user, title: 'Login success' });
                     return;
                 }
             }
@@ -34,6 +34,11 @@ router.post('/login', function (req, res) {
         }
     })
 });
+router.get('/login', (req, res) => {
+    res.render('mpn');
+    return;
+});
+
 
 
 /*--获取用户注册信息 并添加到 data.json 文件中--*/

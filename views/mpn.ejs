@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>人機介面示例</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/mpn.css">
+</head>
+
+<body>
+    <div class="log-container right-top">
+        <button id="loginBtn" class="log-container">
+            <%= %>
+        </button>
+    </div>
+    <table border="1" align="center" width="800" height="200" cellspacing="0">
+
+        <% for (let i=0; i < 10; i++) { %>
+            <tr>
+                <% if (i===0) { %>
+                    <td rowspan="10">合并单元格</td>
+                    <% } %>
+                        <% for (let j=0; j < 6; j++) { %>
+                            <td>行 <%= i + 1 %>, 列 <%= j + 1 %>
+                            </td>
+                            <% } %>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>

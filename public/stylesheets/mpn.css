@@ -1,0 +1,15 @@
+
+ table {
+     border-collapse: collapse;
+     width: 540pt;
+ }
+
+ th {
+     border: 1px solid windowtext;
+     width: 54pt;
+     height: 16.2pt;
+ }
+ .check{
+    width: 216pt;
+    height: 16.2pt
+ }

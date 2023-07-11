@@ -4,17 +4,18 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+let bodyParser = require('body-parser');
 const port = 3000;
 const index = require('./routes/index');
 const users = require('./routes/users');
-
+const ejs = require('ejs');
 const app = express();
 app.use(cors());
-
+app.engine('html', ejs.__express);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -23,16 +24,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(__dirname + '/public'));
 app.use('/', index);
 app.use('/users', users);
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+
 app.use((req, res, next) => {
   const apiUrl = req.protocol + '://' + req.get('host') + '/api';
   // 将 apiUrl 存储到 res.locals 中，以便在后续的路由处理程序中使用
@@ -48,24 +44,24 @@ app.get('/users', (req, res) => {
   res.send('API URL: ' + apiUrl);
   console.log(apiUrl);
 });
-//PCR開蓋
-app.get('/api/start', (req, res) => {
-  const myScript = require('./public/PCR_open.js');
-
-  // 调用目标文件中的函数或执行其他操作
-  myScript.req;
-
-  res.json({ message: '服务器已启动' });
+app.get('/api/start/open', (req, res) => {
+  const PCR_open = require('./public/javascripts/PCR_open.js');
+  PCR_open.req;
+  res.json({ message: 'PCR 開蓋' });
 });
-//PCR關蓋
 
-app.get('/api/start', (req, res) => {
-  const myScript = require('./public/PCR_close.js');
+app.get('/api/start/close', (req, res) => {
+  const PCR_close = require('./public/javascripts/PCR_close.js');
+  PCR_close.req;
+  res.json({ message: 'PCR 關蓋' });
+});
 
-  // 调用目标文件中的函数或执行其他操作
-  myScript.req;
-
-  res.json({ message: '服务器已启动' });
+app.get('/api/start/both', (req, res) => {
+  const openScript = require('./public/javascripts/PCR_open.js');
+  openScript.req;
+  const closeScript = require('./public/javascripts/PCR_close.js');
+  closeScript.req;
+  res.json({ message: 'PCR 開蓋並關蓋' });
 });
 // error handler
 app.use(function (err, req, res, next) {
