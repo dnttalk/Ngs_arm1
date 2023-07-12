@@ -42,7 +42,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
+    height: 30vh;
 }
 
 .centered {
@@ -70,27 +70,34 @@
         /* 設置按鈕之間的垂直間距 */
     border-color: rgb(240, 203, 149);
 }
-.button-container{
+.button-container{   
     position: fixed;
-    bottom: 150px;
+    bottom: 200px;
     right: 200px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 20px;
+    height: 20vh;
+  
+     
+}
+.button-centered {
+    text-align: center;
 }
 .right-bottom-button {
     display: block;
-    height: 10px;
-    min-width: 30px;
-    margin-top: 10px;
-    flex: 1;
     height: 50px;
+    min-width: 300px;
+    margin-top: 100px;
+    flex: 1;
+ 
     min-width: 100px;
+    width: 150px;
+        /* 调整为所需的宽度 */
     background-color: rgb(138, 209, 238);
     border: 5px solid rgb(40, 54, 247);
-    color: rgb(46, 88, 167);
+    color: rgb(32, 94, 210);
     padding: 10px 20px;
     cursor: pointer;
     margin: 0 5px;
@@ -98,6 +105,9 @@
     /* 設定圓角半徑 */
     font-size: 18px;
     /* 設定字體大小 */
+}
+.right-bottom-button button {
+    width: 100px;
 }
 .settings-icon {
     background-color: transparent;
