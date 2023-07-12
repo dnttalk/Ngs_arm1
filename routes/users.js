@@ -35,11 +35,21 @@ router.post('/login', function (req, res) {
     })
 });
 router.get('/login', (req, res) => {
+    res.render('leukemina');
+    return;
+});
+router.get('/login', (req, res) => {
+    res.render('tp53');
+    return;
+});
+router.get('/login', (req, res) => {
     res.render('mpn');
     return;
 });
-
-
+router.get('/login', (req, res) => {
+    res.render('first');
+    return;
+});
 
 /*--获取用户注册信息 并添加到 data.json 文件中--*/
 router.post('/register', function (req, res) {
