@@ -35,3 +35,34 @@ sampleNumberInput.addEventListener("input", function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var leftButton = document.getElementById('leftButton');
+    var rightButton = document.getElementById('rightButton');
+
+    function updateButtonState() {
+        var allChecked = true;
+        checkboxes.forEach(function (checkbox) {
+            if (!checkbox.checked) {
+                allChecked = false;
+            }
+        });
+
+        if (allChecked) {
+            leftButton.classList.add('blue-button');
+            rightButton.classList.add('blue-button');
+            leftButton.disabled = false;
+            rightButton.disabled = false;
+        } else {
+            leftButton.classList.remove('blue-button');
+            rightButton.classList.remove('blue-button');
+            leftButton.disabled = true;
+            rightButton.disabled = true;
+        }
+    }
+
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', updateButtonState);
+    });
+});

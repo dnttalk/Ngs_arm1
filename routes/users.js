@@ -34,10 +34,7 @@ router.post('/login', function (req, res) {
         }
     })
 });
-router.get('/login', (req, res) => {
-    res.render('leukemina');
-    return;
-});
+
 router.get('/login', (req, res) => {
     res.render('tp53');
     return;

@@ -5,54 +5,65 @@
     <title>人機介面示例</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/stylesheets/mpn.css">
+    <link rel="stylesheet" href="/stylesheets/tp53.css">
 </head>
 
 <body>
-    <h1>tp53 Sample number (1-24)</h1>
+    <h1>
+        tp53 Sample number (1-24)
+    </h1>
     <input type="number" max="24" min="1" value="" id="sampleNumberInput">
-    <table border="1" align="center" width="800" height="200" cellspacing="0" id="sampleTable">
-        <% for (let i=0; i < 8; i++) { %>
-            <tr>
-                <% if (i===0) { %>
-                    <td rowspan="10">
-                        <div>
-                            <input type="checkbox" id="PCR Mix1" name="PCR Mix1" checked>
-                            <label for="PCR Mix1">PCR Mix1
-                            </label>
-                        </div>
+    <div>
+        <input type="checkbox" id="PCR Mix1" name="PCR Mix1" checked>
+        <label for="PCR Mix1">PCR Mix1
+        </label>
+    </div>
 
-                        <div>
-                            <input type="checkbox" id="PCR Mix2" name="PCR Mix2">
-                            <label for="PCR Mix2">PCR Mix2</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="Magnetic beads" name="Magnetic beads">
-                            <label for="Magnetic beads">Magnetic beads</label>
-                        </div>
-                    </td>
-                    <% } %>
-                        <% for (let j=0; j < 3; j++) { %>
+    <div>
+        <input type="checkbox" id="PCR Mix2" name="PCR Mix2">
+        <label for="PCR Mix2">PCR Mix2</label>
+    </div>
+    <div>
+        <input type="checkbox" id="Magnetic beads" name="Magnetic beads">
+        <label for="Magnetic beads">Magnetic beads</label>
+    </div>
+    <div style="display: flex;">
+        <% for (let i=1; i <=3; i++) { %>
+            <div>
+                <table border="1" align="center" style="width: 100px; height: 100px;" cellspacing="0"
+                    id="sampleTable<%= i %>">
+                    <% for (let j=0; j < 8; j++) { %>
+                        <tr>
                             <td>
-                                <input type="text" class="sample-name" id="SampleName_<%= i + 1 %>_<%= j + 1 %>"
-                                    name="SampleName_<%= i + 1 %>_<%= j + 1 %>" value="Sample name" disabled>
-
+                                <input type="text" class="sample-name" id="SampleName_<%= i %>_<%= j + 1 %>"
+                                    name="SampleName_<%= i %>_<%= j + 1 %>" value="Sample name" disabled>
                             </td>
-                            <% } %>
-                                <% for (let j=0; j < 3; j++) { %>
-                                    <td>
-                                        <input type="text" class="index-name" id="IndexName_<%= i + 1 %>_<%= j + 1 %>"
-                                            name="IndexName_<%= i + 1 %>_<%= j + 1 %>" value="Index name" disabled>
-
-                                    </td>
-                                    <% } %>
-            </tr>
+                        </tr>
+                        <% } %>
+                </table>
+            </div>
             <% } %>
-    </table>
-    <a href=""><button class="green-arrow-button"><span class="arrow-left"></span></button></a>
-    <button class="green-arrow-button"><span class="arrow-right"></span></button>
-
-    <script src="/javascripts/mpn.js"></script>
+    </div>
+    <div style="display: flex;">
+        <% for (let i=1; i <=3; i++) { %>
+            <div>
+                <table border="1" align="center" style="width: 100px; height: 100px;" cellspacing="0"
+                    id="indexTable<%= i %>">
+                    <% for (let j=0; j < 8; j++) { %>
+                        <tr>
+                            <td>
+                                <input type="text" class="index-name" id="IndexName_<%= i %>_<%= j + 1 %>"
+                                    name="IndexName_<%= i %>_<%= j + 1 %>" value="Index name" disabled>
+                            </td>
+                        </tr>
+                        <% } %>
+                </table>
+            </div>
+            <% } %>
+    </div>
+    <a href=""><button id="leftButton" class="arrow-button" disabled><span class="arrow-left"></span></button></a>
+    <button id="rightButton" class="arrow-button" disabled><span class="arrow-right"></span></button>
+    <script src="/javascripts/tp53.js"></script>
 
 </body>
 

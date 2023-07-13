@@ -1,63 +1,53 @@
+table {
+  border-collapse: collapse;
+  width: 540pt;
+}
 
- table {
-     border-collapse: collapse;
-     width: 540pt;
- }
+th {
+  border: 1px solid windowtext;
+  width: 54pt;
+  height: 16.2pt;
+}
+.check {
+  width: 216pt;
+  height: 16.2pt;
+}
+.greyed-out {
+  background-color: #ccc;
+}
 
- th {
-     border: 1px solid windowtext;
-     width: 54pt;
-     height: 16.2pt;
- }
- .check{
-    width: 216pt;
-    height: 16.2pt
- }
- .greyed-out {
-     background-color: #ccc;
- }
+.sample-name-color {
+  color: blue;
+}
 
- .sample-name-color {
-     color: blue;
- }
+.index-name-color {
+  color: red;
+}
 
- .index-name-color {
-     color: red;
- }
- .green-arrow-button {
-     background-color: green;
-     border: none;
-     color: white;
-     padding: 10px 20px;
-     font-size: 16px;
-     cursor: pointer;
- }
+.disabled {
+  background-color: #f1f1f1;
+}
 
- .arrow-left,
- .arrow-right {
-     display: inline-block;
-     width: 0;
-     height: 0;
-     border: 5px solid transparent;
- }
+.sample-name {
+  color: blue;
+}
 
- .arrow-left {
-     border-right-color: white;
-     margin-right: 5px;
- }
+.index-name {
+  color: red;
+}
+.arrow-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  cursor: not-allowed;
+}
 
- .arrow-right {
-     border-left-color: white;
-     margin-left: 5px;
- }
- .disabled {
-     background-color: #f1f1f1;
- }
+.blue-button {
+  background-color: blue;
+}
 
- .sample-name {
-     color: blue;
- }
-
- .index-name {
-     color: red;
- }
+.green-button {
+  background-color: green;
+}
