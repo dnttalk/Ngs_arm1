@@ -38,7 +38,7 @@ sampleNumberInput.addEventListener("input", function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    var leftButton = document.getElementById('leftButton');
+
     var rightButton = document.getElementById('rightButton');
 
     function updateButtonState() {
@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (allChecked) {
-            leftButton.classList.add('blue-button');
+
             rightButton.classList.add('blue-button');
-            leftButton.disabled = false;
+
             rightButton.disabled = false;
         } else {
-            leftButton.classList.remove('blue-button');
+
             rightButton.classList.remove('blue-button');
-            leftButton.disabled = true;
+
             rightButton.disabled = true;
         }
     }
