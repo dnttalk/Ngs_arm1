@@ -5,7 +5,7 @@
     <title>人機介面示例</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/stylesheets/tp53.css">
+    <link rel="stylesheet" href="/stylesheets/second.css">
 </head>
 
 <body>
@@ -61,9 +61,17 @@
             </div>
             <% } %>
     </div>
-    <a href=""><button id="leftButton" class="arrow-button"><span class="arrow-left"></span></button></a>
-    <button id="rightButton" class="arrow-button"><span class="arrow-right"></span></button>
-    <script src="/javascripts/tp53.js"></script>
+    <a href="./first.ejs">
+        <button onclick="goToFirstPage()" id="leftButton" class="arrow-button" disabled>
+            <i class="arrow-icon left"></i>
+        </button>
+    </a>
+
+    <button id="rightButton" class="arrow-button" disabled>
+        <i class="arrow-icon right"></i>
+    </button>
+    <script src="/javascripts/second.js"></script>
+
 
 </body>
 

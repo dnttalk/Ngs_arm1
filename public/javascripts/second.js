@@ -66,3 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         checkbox.addEventListener('change', updateButtonState);
     });
 });
+function goToFirstPage() {
+    window.location.href = '/first';
+}
