@@ -29,7 +29,6 @@ const renderTemplate = (res, template) => {
 };
 
 router.get('/login', (req, res) => renderTemplate(res, 'second'));
-router.get('/login', (req, res) => renderTemplate(res, 'mpn'));
-router.get('/login', (req, res) => renderTemplate(res, 'first'));
+
 
 module.exports = router;
