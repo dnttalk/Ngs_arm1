@@ -25,11 +25,19 @@ router.post('/login', (req, res) => {
     });
 });
 
-// 登入頁面路由
-// router.get('/login', (req, res) => {
-//     res.render('tp53');
-// });
 
+router.get('/login', (req, res) => {
+    res.render('tp53');
+    return;
+});
+router.get('/login', (req, res) => {
+    res.render('mpn');
+    return;
+});
+router.get('/login', (req, res) => {
+    res.render('first');
+    return;
+});
 
 
 module.exports = router;
