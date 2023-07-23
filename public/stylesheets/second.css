@@ -43,7 +43,12 @@ th {
   font-size: 16px;
   cursor: not-allowed;
 }
-
+.arrow-icon.left {
+  color: green;
+}
+.arrow-icon.right {
+  color: green;
+}
 .blue-button {
   background-color: blue;
 }
